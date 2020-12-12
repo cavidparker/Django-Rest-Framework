@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from api import views
+from DeserializationApi import views as sv
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('student_info/<int:pk>', views.Student_detail),
     path('student_info/',views.Student_list),
+    path('student_create/', sv.Student_create),
 ]
