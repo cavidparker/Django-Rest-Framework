@@ -6,7 +6,12 @@ from rest_framework.renderers import JSONRenderer
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 
+
+from .models import Student
+from django.http import HttpResponse, JsonResponse
+
 # Create your views here.
+# student send Data into the database:
 @csrf_exempt
 def Student_create(request):
     if request.method =='POST':
@@ -22,3 +27,13 @@ def Student_create(request):
 
         json_data = JSONRenderer().render(serializer.errors)    
         return HttpResponse(json_data, content_type='application/json')
+
+
+# all Student show send Data :
+
+def Student_list_two(request):
+    stu = Student.objects.all()
+    serializer = StudentSerializer(stu, many=True)
+    # json_data = JSONRenderer().render(serializer.data)
+    # return HttpResponse(json_data, content_type = 'application/json')
+    return JsonResponse(serializer.data, safe = False)        

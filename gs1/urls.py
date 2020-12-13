@@ -23,4 +23,5 @@ urlpatterns = [
     path('student_info/<int:pk>', views.Student_detail),
     path('student_info/',views.Student_list),
     path('student_create/', sv.Student_create),
+    path('student_list_two/', sv.Student_list_two),
 ]

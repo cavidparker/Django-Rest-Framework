@@ -4,9 +4,9 @@ import json
 URL = "http://127.0.0.1:8000/student_create/"
 
 data = {
-    'name' : 'cavid',
-    'roll' : 106,
-    'city' : 'dhaka'
+    'name' : 'sam',
+    'roll' : 10,
+    'city' : 'Canada'
 }
 
 json_data = json.dumps(data)
