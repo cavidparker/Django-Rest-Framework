@@ -17,11 +17,14 @@ from django.contrib import admin
 from django.urls import path
 from api import views
 from DeserializationApi import views as sv
+from CRUD_Func_based import views as CRUD_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('student_info/<int:pk>', views.Student_detail),
     path('student_info/',views.Student_list),
     path('student_create/', sv.Student_create),
-    path('student_list_two/', sv.Student_list_two),
+    path('student_list/', sv.Student_list_two),
+    path('crud_get_api/', CRUD_views.student_api),
+
 ]

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'api',
     'DeserializationApi',
+    'CRUD_Func_based',
 ]
 
 MIDDLEWARE = [
