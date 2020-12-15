@@ -16,9 +16,15 @@ def student_api(request):
         id = pythondata.get('id', None)
         if id is not None:
             stu = Student.objects.get(id=id)
-            serializers = StudentSerializer(stu)
+            serializer = StudentSerializer(stu)
+
             json_data = JSONRenderer().render(serializer.data)
             return HttpResponse(json_data, content_type='application/json')
+
+        stu = Student.object.all()
+        serializer = StudentSerializer(stu, many = True)
+        json_data = JSONRenderer().render(serializer.data)
+        return HttpResponse(json_data,content_type='application/json') 
 
 
 
