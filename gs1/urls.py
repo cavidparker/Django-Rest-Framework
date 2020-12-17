@@ -18,6 +18,7 @@ from django.urls import path
 from api import views
 from DeserializationApi import views as sv
 from CRUD_Func_based import views as CRUD_views
+from CRUD_Class_based import views as CRUD_class_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,6 +28,8 @@ urlpatterns = [
     path('student_list/', sv.Student_list_two),
     path('crud_get_api/', CRUD_views.student_api),
     path('crud_func_list/', CRUD_views.crud_func_list),
+    path('crud_class_list/', CRUD_class_views.StudentApi.as_view()),
+
 
 
 ]

@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'api',
     'DeserializationApi',
     'CRUD_Func_based',
+    'CRUD_Class_based',
 ]
 
 MIDDLEWARE = [
