@@ -12,4 +12,50 @@ def get_data(id = None):
     data = r.json()
     print(data)
 
-get_data(1)        
+get_data()
+
+### POST DATA:
+
+def post_data():
+    data = {
+        'name':'Ravi tezza',
+        'roll':11545,
+        'city':'India'
+    }
+
+    json_data = json.dumps(data)
+    r = requests.post(url = URL, data=json_data)
+    data = r.json()
+    print(data)
+
+# post_data()
+
+
+
+## UPDATE DATA
+def update_data():
+    data ={
+        'id': 5,
+        'name': 'awasaria rai',
+        'city': 'los vegas'
+    }
+
+    json_data = json.dumps(data)
+    r = requests.put(url = URL, data=json_data)
+    data = r.json()
+    print(data)
+
+# update_data()
+
+
+
+## DELETE DATA :
+def delete_data():
+    data = {'id':4}
+    json_data = json.dumps(data)
+    r = requests.delete(url = URL, data=json_data)
+    data = r.json()
+    print(data)
+
+# delete_data()    
+

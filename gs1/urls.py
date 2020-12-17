@@ -26,5 +26,7 @@ urlpatterns = [
     path('student_create/', sv.Student_create),
     path('student_list/', sv.Student_list_two),
     path('crud_get_api/', CRUD_views.student_api),
+    path('crud_func_list/', CRUD_views.crud_func_list),
+
 
 ]
