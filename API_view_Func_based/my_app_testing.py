@@ -1,18 +1,19 @@
 import requests
 import json
 
-URL = "http://127.0.0.1:8000/crud_class_list/"
+URL = "http://127.0.0.1:8000/api_view_func/"
 
 def get_data(id = None):
     data = {}
     if id is not None:
         data = {'id':id}
     json_data = json.dumps(data)
-    r = requests.get(url = URL, data = json_data)
+    headers = {'content-Type':'application/json'}
+    r = requests.get(url = URL, headers=headers, data = json_data)
     data = r.json()
     print(data)
 
-# get_data()
+# get_data(1)
 
 ### POST DATA:
 
@@ -22,13 +23,13 @@ def post_data():
         'roll':80,
         'city':'loss vgs'
     }
-
+    headers = {'content-Type':'application/json'}
     json_data = json.dumps(data)
-    r = requests.post(url = URL, data=json_data)
+    r = requests.post(url = URL, headers=headers, data=json_data)
     data = r.json()
     print(data)
 
-post_data()
+# post_data()
 
 
 
@@ -36,26 +37,27 @@ post_data()
 def update_data():
     data ={
         'id': 2,
-        'name': 'awasaria rai',
-        'city': 'los vegas'
+        'name': 'tom',
+        'city': 'torento'
     }
-
+    headers = {'content-Type':'application/json'}
     json_data = json.dumps(data)
-    r = requests.put(url = URL, data=json_data)
+    r = requests.put(url = URL,headers=headers, data=json_data)
     data = r.json()
     print(data)
 
-# update_data()
+update_data()
 
 
 
 ## DELETE DATA :
 def delete_data():
-    data = {'id':4}
+    data = {'id':3}
+    headers = {'content-Type':'application/json'}
     json_data = json.dumps(data)
-    r = requests.delete(url = URL, data=json_data)
+    r = requests.delete(url = URL,headers=headers, data=json_data)
     data = r.json()
     print(data)
 
-# delete_data()
+delete_data()
 

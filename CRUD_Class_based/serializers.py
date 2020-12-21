@@ -1,7 +1,9 @@
 from rest_framework import serializers
 from .models import Student
 
-
+# def upper_case_name(value):
+#     if value[0].lower() != 'c':
+#         raise serializers.ValidationError('Name should be start with R')
 
 class StudentSerializer(serializers.Serializer):
     name = serializers.CharField(max_length=200)
@@ -17,3 +19,16 @@ class StudentSerializer(serializers.Serializer):
         instance.city = validated_data.get('city', instance.city)
         instance.save()
         return instance
+
+    def validate_roll(self, value):
+        if value >=200:
+            raise serializers.ValidationError('seat full')
+        return value
+
+    def validate(self, data):
+        nm = data.get('name')
+        ct = data.get('city')
+        if nm.lower() == 'cavid' and ct.lower() != 'toronto':
+            raise serializers.ValidationError('City must be torento')
+        return data
+                

@@ -19,6 +19,7 @@ from api import views
 from DeserializationApi import views as sv
 from CRUD_Func_based import views as CRUD_views
 from CRUD_Class_based import views as CRUD_class_views
+from API_view_Func_based import views as func_api_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,7 +30,8 @@ urlpatterns = [
     path('crud_get_api/', CRUD_views.student_api),
     path('crud_func_list/', CRUD_views.crud_func_list),
     path('crud_class_list/', CRUD_class_views.StudentApi.as_view()),
-
+    path('api_view_func/', func_api_view.student_api),
+    path('api_view_func/<int:pk>', func_api_view.student_api),
 
 
 ]
