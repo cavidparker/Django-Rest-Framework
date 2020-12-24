@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'CRUD_Func_based',
     'CRUD_Class_based',
     'API_view_Func_based',
+    'API_view_Class_based',
+
 
 ]
 

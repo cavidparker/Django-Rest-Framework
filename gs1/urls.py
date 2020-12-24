@@ -14,12 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 from api import views
 from DeserializationApi import views as sv
 from CRUD_Func_based import views as CRUD_views
 from CRUD_Class_based import views as CRUD_class_views
 from API_view_Func_based import views as func_api_view
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,6 +34,8 @@ urlpatterns = [
     path('crud_class_list/', CRUD_class_views.StudentApi.as_view()),
     path('api_view_func/', func_api_view.student_api),
     path('api_view_func/<int:pk>', func_api_view.student_api),
-
+    
+    #API_view_class_based
+    path('', include('API_view_Class_based.urls')),
 
 ]
