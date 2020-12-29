@@ -42,6 +42,8 @@ urlpatterns = [
     path('mixins/', include('API_view_and_Mixin.urls')),
     # concrete
     path('concrete/', include('Concrete_view_class.urls')),
+    # Viewset url Route
+    path('viewset_route/', include('Viewset_url_route.urls')),
     
 
 
