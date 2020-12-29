@@ -23,6 +23,7 @@ from API_view_Func_based import views as func_api_view
 
 
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('student_info/<int:pk>', views.Student_detail),
@@ -37,5 +38,11 @@ urlpatterns = [
     
     #API_view_class_based
     path('', include('API_view_Class_based.urls')),
+    # mixins
+    path('mixins/', include('API_view_and_Mixin.urls')),
+    # concrete
+    path('concrete/', include('Concrete_view_class.urls')),
+    
+
 
 ]

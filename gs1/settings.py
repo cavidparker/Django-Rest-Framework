@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'CRUD_Class_based',
     'API_view_Func_based',
     'API_view_Class_based',
+    'API_view_and_Mixin',
+    'Concrete_view_class',
 
 
 ]
