@@ -7,7 +7,7 @@ class Singer(models.Model):
     gender = models.CharField(max_length = 200)
     def __str__(self):
         return self.name
-
+ 
 class Song(models.Model):
     title = models.CharField(max_length=100)
     singer = models.ForeignKey(Singer, on_delete=models.CASCADE, related_name='sungby')
@@ -15,4 +15,5 @@ class Song(models.Model):
 
     def __str__(self):
         return self.title
+      
             

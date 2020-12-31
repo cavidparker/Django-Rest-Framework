@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'Concrete_view_class',
     'Viewset_url_route',
     'Nested_serializer',
+    'Multiple_Nested_serializer',
 
 
 ]

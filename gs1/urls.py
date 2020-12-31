@@ -46,6 +46,9 @@ urlpatterns = [
     path('viewset_route/', include('Viewset_url_route.urls')),
     # Nested Serializer
     path('Nested_serializer/', include('Nested_serializer.urls')),
+    # multiple Nested Serializer
+    path('Multiple_Nested_serializer/', include('Multiple_Nested_serializer.urls')),
+
     
 
 
