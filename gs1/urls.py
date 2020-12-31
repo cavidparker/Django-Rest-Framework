@@ -48,6 +48,9 @@ urlpatterns = [
     path('Nested_serializer/', include('Nested_serializer.urls')),
     # multiple Nested Serializer
     path('Multiple_Nested_serializer/', include('Multiple_Nested_serializer.urls')),
+    # Throttling 
+    path('throttling_test/', include('throttling_test.urls')),
+
 
     
 

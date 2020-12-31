@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'Viewset_url_route',
     'Nested_serializer',
     'Multiple_Nested_serializer',
+    'throttling_test',
 
 
 ]
@@ -136,3 +137,13 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 django_heroku.settings(locals())
+
+# Throttling 
+REST_FRAMEWORK = {
+    'DEFAULT_THROTTLE_RATES':{
+
+        'anon': '4/day',
+        'user': '5/hour',
+        'Teacher': '3/minute'
+    }
+}
