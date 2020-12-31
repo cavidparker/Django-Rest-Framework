@@ -44,6 +44,8 @@ urlpatterns = [
     path('concrete/', include('Concrete_view_class.urls')),
     # Viewset url Route
     path('viewset_route/', include('Viewset_url_route.urls')),
+    # Nested Serializer
+    path('Nested_serializer/', include('Nested_serializer.urls')),
     
 
 

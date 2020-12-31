@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'API_view_and_Mixin',
     'Concrete_view_class',
     'Viewset_url_route',
+    'Nested_serializer',
 
 
 ]
