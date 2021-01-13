@@ -50,6 +50,10 @@ urlpatterns = [
     path('Multiple_Nested_serializer/', include('Multiple_Nested_serializer.urls')),
     # Throttling 
     path('throttling_test/', include('throttling_test.urls')),
+    #JSON JWT token
+    path('token_JWT/', include('Json_web_token_JWT.urls')),
+    # Multiple model 
+    path('multiple_class/', include('Multiple_model.urls')),
 
 
     

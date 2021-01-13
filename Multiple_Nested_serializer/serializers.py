@@ -1,18 +1,31 @@
-from .models import MainWhoWeAre, OurStory
+from .models import MainWhoWeAre, OurStory, OurService
 from rest_framework import serializers
 
 
-class OurStorySerializer(serializers.ModelSerializer):
-    
-    class Meta:
-        model = OurStory
-        fields = ['id','title', 'description']
-
 
 class MainWhoWeAreSerializer(serializers.ModelSerializer):
-    story = OurStorySerializer(many = True, read_only = True) 
+    # our_story = serializers.StringRelatedField(many = True, read_only = True)
     class Meta:
         model = MainWhoWeAre
-        fields = ['id','page_title_english', 'page_template_english','page_heading_english','story']        
+        fields = ['id','page_heading_english','our_story']
+
+
+class OurServiceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = OurService
+        fields = ['ourservice_title','description','image', 'image_sd']
+
+
+class OurStorySerializer(serializers.ModelSerializer):
+    # StoryBy = serializers.StringRelatedField(many = True, read_only = True)
+    StoryBy = MainWhoWeAreSerializer(many = True, read_only = True)
+    # serviceBy = OurServiceSerializer(many =True, read_only = True)
+    serviceBy = serializers.StringRelatedField(many = True, read_only = True)
+    class Meta: 
+        model = OurStory
+        fields = ['id','title', 'description','StoryBy', 'serviceBy']
+
+
+       
 
  

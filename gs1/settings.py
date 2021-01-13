@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import django_heroku
+from datetime import timedelta
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -52,6 +53,8 @@ INSTALLED_APPS = [
     'Nested_serializer',
     'Multiple_Nested_serializer',
     'throttling_test',
+    'Json_web_token_JWT',
+    'Multiple_model',
 
 
 ]
@@ -146,4 +149,9 @@ REST_FRAMEWORK = {
         'user': '5/hour',
         'Teacher': '3/minute'
     }
+}
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME':timedelta(minutes=10),
+    # 'ROTATE_REFRESH_TOKENS': True,      # Get new refresh token every time
 }
