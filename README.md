@@ -5,3 +5,15 @@
 - pip install httpie
 ## Token generate using custom user
 - http POST http://127.0.0.1:8000/URL/ username="max" password="yourpassword"
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': "upayfork",
+        "USER" : "postgres",
+        "PASSWORD" : "alienide",
+        "HOST" : "localhost",
+        "PORT": "",
+    },
+}
