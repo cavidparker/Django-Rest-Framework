@@ -6,6 +6,7 @@
 ## Token generate using custom user
 - http POST http://127.0.0.1:8000/URL/ username="max" password="yourpassword"
 
+## Data BASE:
 
 DATABASES = {
     'default': {
